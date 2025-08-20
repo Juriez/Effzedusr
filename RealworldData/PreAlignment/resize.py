@@ -28,6 +28,7 @@ for filename in os.listdir(source_dir_tele):
         dst_path = os.path.join(dest_dir_tele, filename)
 
         with Image.open(src_path) as img:
+            img = ImageOps.exif_transpose(img)
             if img.width >= img.height:
                 # Horizontal
                 img_resized = img.resize(horizontal_size, Image.LANCZOS)
@@ -37,6 +38,7 @@ for filename in os.listdir(source_dir_tele):
 
             img_resized.save(dst_path)
 
+os.makedirs(dest_dir_wide, exist_ok=True)
 
 # Loop through all files in the source directory
 for filename in os.listdir(source_dir_wide):
@@ -45,6 +47,7 @@ for filename in os.listdir(source_dir_wide):
         dst_path = os.path.join(dest_dir_wide, filename)
 
         with Image.open(src_path) as img:
+            img = ImageOps.exif_transpose(img)
             if img.width >= img.height:
                 # Horizontal
                 img_resized = img.resize(horizontal_size, Image.LANCZOS)
