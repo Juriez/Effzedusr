@@ -1,5 +1,5 @@
 import os
-from PIL import Image
+from PIL import Image,ImageOps
 
 # Set source and destination folders
 source_dir_tele = "/home/bxg-server/zareen/Meta_Rcan/ZeDuSR/RealworldData/Data/HighRes/TeleView"
