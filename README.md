@@ -86,8 +86,8 @@ You can also run the project through a **browser-based UI**.
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/Juriez/zedusr.git
-cd zedusr
+git clone https://github.com/Juriez/Effzedusr.git
+cd Effzedusr
 ```
 
 2. Install dependencies:
