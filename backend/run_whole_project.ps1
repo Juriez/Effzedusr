@@ -57,8 +57,8 @@ Write-Host "4. Iterative image alignment ..." -ForegroundColor Yellow
     --dataset "iPhone11_wideSRTele\$ImageBase" `
     --shave 5 `
     --scale 2 `
-    --epochs 11 `
-    --fre_epoch 5
+    --epochs 21 `
+    --fre_epoch 10
 Write-Host "Alignment finished." -ForegroundColor Green
 Write-Host ""
 

@@ -11,8 +11,8 @@ python "alignment.py" `
     --dataset "iPhone11_wideSRTele\Car" `
     --shave 5 `
     --scale 2 `
-    --epochs 11 `       
-    --fre_epoch 5
+    --epochs 21 `       
+    --fre_epoch 10
 
 # epochs 21 for final results, 11 for quick test
 # fre_epoch 10 for final results, 5 for quick test
