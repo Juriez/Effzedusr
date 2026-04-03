@@ -9,7 +9,7 @@ from models.model_lib.vdsr import VDSR
 from models.model_lib.rcan import RCAN
 from math import sqrt
 import os
-pretrained_path='/home/bxg-server/zareen/Meta_Rcan/ZeDuSR/SR/models/preTrained/BIX4/RCAN_BIX4.pt'
+pretrained_path='D:\\ZeDuSR\\zedusr\\SR\\models\\preTrained\\RCAN_BIX4.pt'
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 

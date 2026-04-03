@@ -33,12 +33,12 @@ parser.add_argument('--shave', type=int, default=20,
 parser.add_argument('--input_hr', type=str,
                     #default='../SynthesizedData/Data/TeleView_crop_SIFTAlign/artroom.jpeg',
                     # default='../RealworldData/Data/TeleView_SIFTAlign_cor/real.jpeg',
-                    default='../RealworldData/Data/TeleView_SIFTAlign/Fair.jpeg',
+                    default='../RealworldData/Data/TeleView_SIFTAlign_cor/Car.jpeg',
                     help='TeleView image')
 
 parser.add_argument('--input_lr', type=str,
-                    #default='../SynthesizedData/Data/WideView_iso2x_jpeg75_crop/artroom.jpeg',
-                    default='../RealworldData/Data/WideVijpegew_crop/Fair.jpeg',
+                    #default='../SynthesizedData/Data/WideView_iso2x_jpg75_crop/artroom.jpeg',
+                    default='../RealworldData/Data/WideView_crop/Car.jpeg',
                     help='WideView image')
 # training hyper params
 parser.add_argument('--lambda_list', type=str, default='1, 0.005, 0.001, 0.01')
@@ -47,12 +47,6 @@ parser.add_argument('--lambda_list', type=str, default='1, 0.005, 0.001, 0.01')
 parser.add_argument('--epochs', type=int, default=1501, metavar='N', help='number of epochs to train')
 parser.add_argument('--start_epoch', type=int, default=0, metavar='N', help='start epoch')
 parser.add_argument('--fre_epoch', type=int, default=800, help='adv_fre loss start epoch')
-
-# for early stopping
-# parser.add_argument('--patience', type=int, default=50,
-#                     help='number of iterations with no significant improvement before stopping')
-# parser.add_argument('--min_improve', type=float, default=1e-4,
-#                     help='minimum relative improvement in loss to reset patience')
 
 
 # optimizer params
@@ -71,8 +65,8 @@ parser.add_argument('--resume', type=str, default=None, help='put the path to re
 parser.add_argument('--eval_interval', type=int, default=10, help='evaluation interval (default: 50)')
 #parser.add_argument('--output_path', type=str, default='../SynthesizedData/Data/DIAlign/', help='Root path to save ')
 parser.add_argument('--output_path', type=str, default='../RealworldData/Data/DIAlign/', help='Root path to save ')
-#parser.add_argument('--dataset', type=str, default='MB_isojpeg2x/artroom', help='Save DirName')
-parser.add_argument('--dataset', type=str, default='iPhone11_wideSRTele/Fair', help='Save DirName')
+#parser.add_argument('--dataset', type=str, default='MB_isojpg2x/artroom', help='Save DirName')
+parser.add_argument('--dataset', type=str, default='iPhone11_wideSRTele/Car', help='Save DirName')
 args = parser.parse_args()
 
 

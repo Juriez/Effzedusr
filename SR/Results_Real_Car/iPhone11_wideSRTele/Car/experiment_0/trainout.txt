@@ -1,0 +1,17 @@
+Namespace(train_lr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Car\\out_20_warp.png', train_hr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Car\\HR.png', Invari_map='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Car\\PatchDisOut.npy', test_lr='..\\RealworldData\\Data\\WideView\\Car.jpeg', test_hr='..\\RealworldData\\Data\\TeleView\\Car.jpeg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\Car', output_path='D:\\ZeDuSR\\zedusr\\SR\\Results_Real_Car\\', eval_interval=100, epochs=201, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
+Starting Epoch: 0
+Total Epoches: 201
+
+ iter: 0/201, lr: 0.000200000 | PSNR:6.193 | loss: 1.97146 | loss_rec:1.971
+
+ iter: 10/201, lr: 0.000100000 | PSNR:15.88 | loss: 0.13332 | loss_rec:0.1333
+
+ iter: 20/201, lr: 0.000100000 | PSNR:19.23 | loss: 0.09229 | loss_rec:0.09229
+
+ iter: 30/201, lr: 0.000100000 | PSNR:21.82 | loss: 0.06862 | loss_rec:0.06862
+
+ iter: 40/201, lr: 0.000100000 | PSNR:22.95 | loss: 0.06217 | loss_rec:0.06217
+
+ iter: 50/201, lr: 0.000100000 | PSNR:22.45 | loss: 0.06205 | loss_rec:0.06205
+
+ iter: 60/201, lr: 0.000100000 | PSNR:23.46 | loss: 0.05947 | loss_rec:0.05947

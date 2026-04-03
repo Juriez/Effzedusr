@@ -1,0 +1,9 @@
+Namespace(train_lr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\out_20_warp.png', train_hr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\HR.png', Invari_map='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\PatchDisOut.npy', test_lr='..\\RealworldData\\Data\\WideView\\lift.jpg', test_hr='..\\RealworldData\\Data\\TeleView\\lift.jpg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\lift', output_path='D:\\ZeDuSR\\zedusr\\SR\\Results_Real_lift\\', eval_interval=5, epochs=11, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
+Starting Epoch: 0
+Total Epoches: 11
+
+ iter: 0/11, lr: 0.000200000 | PSNR:7.379 | loss: 0.49604 | loss_rec:0.496
+
+ iter: 5/11, lr: 0.000100000 | PSNR:14.47 | loss: 0.17263 | loss_rec:0.1726
+
+ iter: 10/11, lr: 0.000100000 | PSNR:17.96 | loss: 0.11351 | loss_rec:0.1135

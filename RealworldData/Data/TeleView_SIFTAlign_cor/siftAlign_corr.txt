@@ -1,0 +1,1 @@
+after color correction images will be stored here

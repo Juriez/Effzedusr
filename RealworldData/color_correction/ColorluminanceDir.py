@@ -44,16 +44,16 @@ def process_image(args):
 if __name__ == "__main__":
     start_time = time.time()
 
-    ref_folder = "/home/bxg-server/zareen/Meta_Rcan/ZeDuSR/RealworldData/Data/WideView_crop_bic/"
-    input_folder = "/home/bxg-server/zareen/Meta_Rcan/ZeDuSR/RealworldData/Data/TeleView_SIFTAlign/"
-    save_folder = "/home/bxg-server/zareen/Meta_Rcan/ZeDuSR/RealworldData/Data/TeleView_SIFTAlign_cor/"
+    ref_folder = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView_crop_bic"
+    input_folder = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView_SIFTAlign"
+    save_folder = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView_SIFTAlign_cor/"
 
     os.makedirs(save_folder, exist_ok=True)
 
     valid_exts = ('.jpg', '.jpeg', '.png', '.bmp', '.tif', '.tiff')
     filepaths = [f for f in os.listdir(ref_folder) if f.lower().endswith(valid_exts)]
 
-    # Parallel execution
+   
     args_list = [(fname, ref_folder, input_folder, save_folder) for fname in filepaths]
     with Pool(processes=cpu_count()) as pool:
         pool.map(process_image, args_list)

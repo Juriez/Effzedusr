@@ -23,18 +23,18 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 parser = argparse.ArgumentParser(description='ZSSR')
 # Data specifications
 parser.add_argument('--train_lr', type=str,
-                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Fair/out_20_warp.png') #out_1000_warp.png
+                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/out_20_warp.png') #out_1000_warp.png
 
 parser.add_argument('--train_hr', type=str,
-                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Fair/HR.png')
+                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/HR.png')
 
 parser.add_argument('--Invari_map', type=str,
-                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Fair/PatchDisOut.npy')
+                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/PatchDisOut.npy')
 
 parser.add_argument('--test_lr', type=str,
-                    default='../RealworldData/Data/WideView/Fair.jpeg')
+                    default='../RealworldData/Data/WideView/Car.jpeg')
 parser.add_argument('--test_hr', type=str,
-                    default='../RealworldData/Data/TeleView/Fair.jpeg')
+                    default='../RealworldData/Data/TeleView/Car.jpeg')
 
 parser.add_argument('--workers', type=int, default=8, metavar='N', help='dataloader threads')
 parser.add_argument('--vgg_weight', type=float, default=0.05, help='weight of perception loss')
@@ -45,11 +45,11 @@ parser.add_argument('--vgg_path', type=str, default='../preTrained/vgg16-397923a
 parser.add_argument('--dataset', type=str, default='wide2x/real_output.jpeg')
 parser.add_argument('--output_path', type=str, default='./Results_iphone11/',
                     help='save dir')
-parser.add_argument('--eval_interval', type=int, default=100, help='evaluation interval') #200
+parser.add_argument('--eval_interval', type=int, default=100, help='evaluation interval') #100
 
 # training hyper params
 
-parser.add_argument('--epochs', type=int, default=201, metavar='N',
+parser.add_argument('--epochs', type=int, default=201, metavar='N', #201
                     help='number of epochs to train')
 parser.add_argument('--start_epoch', type=int, default=0,
                     metavar='N', help='start epochs (default:0)')
@@ -57,11 +57,6 @@ parser.add_argument('--batch_size', type=int, default=16)
 parser.add_argument('--patch_size', type=int, default=128)
 parser.add_argument('--scale', type=int, default=2)
 parser.add_argument('--shave', type=int, default=0)
-
-# for early stop
-# parser.add_argument('--patience', type=int, default=50, help='early stopping patience epochs')
-# parser.add_argument('--min_improve', type=float, default=1e-4, help='minimum relative improvement for early stopping')
- 
 
 # optimizer params
 parser.add_argument('--lr', type=float, default=2 * 1e-4, metavar='LR', help='learning rate')
@@ -103,7 +98,6 @@ class Trainer(object):
         self.criterion = ReconstructionLoss(args)
 
         # Using cuda
-        # self.model = torch.nn.DataParallel(self.model, device_ids=self.args.gpu_ids)
         self.model = torch.nn.DataParallel(self.model)
         self.model = self.model.to(device)
         self.criterion = self.criterion.to(device)
@@ -112,7 +106,6 @@ class Trainer(object):
         self.evaluator = Evaluator()
 
         # Define lr scheduler
-        # self.scheduler = LR_Scheduler(args.lr_scheduler, args.lr, args.epochs, lr_step=1000)
         self.lr_scheduler = optim.lr_scheduler.MultiStepLR(self.optimizer, args.milestones, args.gamma)
 
         # Resuming checkpoint
@@ -149,7 +142,7 @@ class Trainer(object):
         psnr_iter_pred = cal_psnr(pred, hr_image)
         train_loss = loss.item()
 
-        if epoch % 10 == 0:    #50
+        if epoch % 5 == 0:    #10
             self.saver.print_log('\n iter: {}/{}, lr: {:.9f} | PSNR:{:.4} | loss: {:.5f} | loss_rec:{:.4}'
                                 .format(epoch, args.epochs, self.optimizer.param_groups[0]["lr"], psnr_iter_pred,
                                         train_loss, loss.item()))
@@ -215,49 +208,6 @@ def main():
 
     trainer.writer.close()
 
-# def main():
-#     trainer = Trainer(args)
-
-#     trainer.testing(0, args.test_lr, args.test_hr)
-
-#     best_loss = float('inf')
-#     patience_counter = 0
-
-#     for epoch in tqdm(range(trainer.args.start_epoch, trainer.args.epochs), ncols=45):
-#         trainer.training(epoch)
-
-#         current_loss = trainer.criterion.loss.item() if hasattr(trainer.criterion, 'loss') else None
-#         # Or alternatively track last training loss stored somewhere in Trainer, for example:
-#         # current_loss = trainer.last_train_loss
-
-#         # Use the returned training loss (you may need to return it from training())
-#         # For now, let's assume trainer.training stores loss in self.last_train_loss
-#         current_loss = getattr(trainer, 'last_train_loss', None)
-#         if current_loss is None:
-#             # If you don't have that, just skip early stopping
-#             current_loss = float('inf')
-
-#         if best_loss - current_loss > args.min_improve * abs(best_loss):
-#             best_loss = current_loss
-#             patience_counter = 0
-#             # Save best model checkpoint
-#             model_save_path = os.path.join(args.output_path, args.dataset, 'best_model.pth')
-#             torch.save(trainer.model.state_dict(), model_save_path)
-#             print(f"Epoch {epoch}: Improvement found. Saving model.")
-#         else:
-#             patience_counter += 1
-#             print(f"Epoch {epoch}: No significant improvement. Patience {patience_counter}/{args.patience}")
-
-#         if patience_counter >= args.patience:
-#             print(f"\nEarly stopping triggered at epoch {epoch}")
-#             break
-
-#         if epoch % args.eval_interval == 0 or epoch == 1 or epoch == 0:
-#             trainer.testing(epoch, args.test_lr, args.test_hr)
-
-#     trainer.writer.close()
-
-
 
 if __name__ == '__main__':
     args = parser.parse_args()
@@ -265,8 +215,8 @@ if __name__ == '__main__':
     # RCAN setting
     args.in_ch = 3
     args.n_feats = 64
-    args.n_reduction = 16  # reduction factor of Channel attention，Channel/reduction
-    args.n_resgroups = 5  # RCAB number of  RAM
+    args.n_reduction = 16  
+    args.n_resgroups = 5  
     args.n_resblocks = 3
 
     main()

@@ -1,1 +1,1 @@
-sift align images
+after siftAlign, images will be stored here

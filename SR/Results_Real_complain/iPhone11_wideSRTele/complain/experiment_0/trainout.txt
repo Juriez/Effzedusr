@@ -1,0 +1,45 @@
+Namespace(train_lr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\complain\\out_20_warp.png', train_hr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\complain\\HR.png', Invari_map='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\complain\\PatchDisOut.npy', test_lr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\WideView\\complain.jpeg', test_hr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\TeleView\\complain.jpeg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\complain', output_path='.\\Results_Real_complain\\', eval_interval=100, epochs=201, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
+Starting Epoch: 0
+Total Epoches: 201
+
+ iter: 0/201, lr: 0.000200000 | PSNR:4.149 | loss: 1.97992 | loss_rec:1.98
+
+ iter: 10/201, lr: 0.000100000 | PSNR:19.38 | loss: 0.09086 | loss_rec:0.09086
+
+ iter: 20/201, lr: 0.000100000 | PSNR:20.82 | loss: 0.06856 | loss_rec:0.06856
+
+ iter: 30/201, lr: 0.000100000 | PSNR:20.93 | loss: 0.06420 | loss_rec:0.0642
+
+ iter: 40/201, lr: 0.000100000 | PSNR:21.1 | loss: 0.05840 | loss_rec:0.0584
+
+ iter: 50/201, lr: 0.000100000 | PSNR:20.97 | loss: 0.05721 | loss_rec:0.05721
+
+ iter: 60/201, lr: 0.000100000 | PSNR:21.78 | loss: 0.05511 | loss_rec:0.05511
+
+ iter: 70/201, lr: 0.000100000 | PSNR:22.69 | loss: 0.05476 | loss_rec:0.05476
+
+ iter: 80/201, lr: 0.000100000 | PSNR:22.08 | loss: 0.05284 | loss_rec:0.05284
+
+ iter: 90/201, lr: 0.000100000 | PSNR:21.3 | loss: 0.05499 | loss_rec:0.05499
+
+ iter: 100/201, lr: 0.000100000 | PSNR:23.48 | loss: 0.04887 | loss_rec:0.04887
+
+ iter: 110/201, lr: 0.000100000 | PSNR:22.6 | loss: 0.05094 | loss_rec:0.05094
+
+ iter: 120/201, lr: 0.000100000 | PSNR:26.54 | loss: 0.04235 | loss_rec:0.04235
+
+ iter: 130/201, lr: 0.000100000 | PSNR:23.7 | loss: 0.04824 | loss_rec:0.04824
+
+ iter: 140/201, lr: 0.000100000 | PSNR:23.31 | loss: 0.04887 | loss_rec:0.04887
+
+ iter: 150/201, lr: 0.000100000 | PSNR:25.86 | loss: 0.04277 | loss_rec:0.04277
+
+ iter: 160/201, lr: 0.000100000 | PSNR:22.31 | loss: 0.05038 | loss_rec:0.05038
+
+ iter: 170/201, lr: 0.000100000 | PSNR:25.39 | loss: 0.04296 | loss_rec:0.04296
+
+ iter: 180/201, lr: 0.000100000 | PSNR:23.41 | loss: 0.05060 | loss_rec:0.0506
+
+ iter: 190/201, lr: 0.000100000 | PSNR:23.46 | loss: 0.04831 | loss_rec:0.04831
+
+ iter: 200/201, lr: 0.000100000 | PSNR:24.82 | loss: 0.04657 | loss_rec:0.04657

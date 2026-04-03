@@ -10,7 +10,7 @@ from utils.Encoder import Encoder
 from torchvision.models import vgg16
 
 vgg = vgg16()
-vgg.load_state_dict(torch.load('../preTrained/vgg16-397923af.pth'))
+vgg.load_state_dict(torch.load('D:\\ZeDuSR\\zedusr\\preTrained\\vgg16-397923af.pth'))
 
 class ReconstructionLoss_warp(nn.Module):
 
