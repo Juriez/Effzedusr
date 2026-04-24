@@ -1,1 +1,3 @@
 
+After cloning this project remove all .txt file of RealworldData/Data/Highres/Teleview, RealworldData/Data/Highres/Wideeview  ...
+These were added just to track the pipeline.
