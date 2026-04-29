@@ -23,7 +23,7 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 parser = argparse.ArgumentParser(description='ZSSR')
 # Data specifications
 parser.add_argument('--train_lr', type=str,
-                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/out_20_warp.png') #out_1000_warp.png
+                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/out_30_warp.png') 
 
 parser.add_argument('--train_hr', type=str,
                     default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/HR.png')
@@ -49,7 +49,7 @@ parser.add_argument('--eval_interval', type=int, default=100, help='evaluation i
 
 # training hyper params
 
-parser.add_argument('--epochs', type=int, default=201, metavar='N', #201
+parser.add_argument('--epochs', type=int, default=301, metavar='N', #201
                     help='number of epochs to train')
 parser.add_argument('--start_epoch', type=int, default=0,
                     metavar='N', help='start epochs (default:0)')
