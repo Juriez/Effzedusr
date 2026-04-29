@@ -11,7 +11,7 @@ $python = "python"
 $script = "D:\ZeDuSR\zedusr\SR\ZSSR_real.py"
 
 # Input and output paths
-$train_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\out_20_warp.png"
+$train_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\out_30_warp.png"
 $train_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\HR.png"
 $test_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView\Car.jpeg"
 $test_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView\Car.jpeg"
