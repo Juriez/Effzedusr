@@ -57,7 +57,7 @@ Write-Host "4. Iterative image alignment ..." -ForegroundColor Yellow
     --dataset "iPhone11_wideSRTele\$ImageBase" `
     --shave 5 `
     --scale 2 `
-    --epochs 21 `
+    --epochs 31 `
     --fre_epoch 10
 Write-Host "Alignment finished." -ForegroundColor Green
 Write-Host ""
@@ -67,7 +67,7 @@ Write-Host "5. Zero-shot super-resolution ..." -ForegroundColor Yellow
 & $python "..\SR\ZSSR_real.py" `
     --scale 2 `
     --shave 4 `
-    --train_lr "..\RealworldData\Data\DIAlign\iPhone11_wideSRTele\$ImageBase\out_20_warp.png" `
+    --train_lr "..\RealworldData\Data\DIAlign\iPhone11_wideSRTele\$ImageBase\out_30_warp.png" `
     --train_hr "..\RealworldData\Data\DIAlign\iPhone11_wideSRTele\$ImageBase\HR.png" `
     --test_lr "..\RealworldData\Data\WideView\$ImageName" `
     --test_hr "..\RealworldData\Data\TeleView\$ImageName" `
