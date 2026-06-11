@@ -81,6 +81,32 @@ SR\Results_Real_<ImageName>
 
 You can also run the project through a **browser-based UI**.
 
+## Requirements
+
+### Environment
+
+- Python 3.13.1
+- Node.js v22.12.0
+- npm v10.9.0
+
+### Python Dependencies
+
+```txt
+numpy==2.2.2
+pandas==2.2.3
+pillow==11.3.0
+matplotlib==3.10.6
+nltk==3.9.2
+opencv-python==4.12.0.88
+scikit-learn==1.6.1
+scikit-image==0.25.2
+scipy==1.15.1
+seaborn==0.13.2
+torch==2.8.0
+torchvision==0.23.0
+tqdm==4.67.1
+```
+
 ### 🔹 Setup Instructions
 
 1. Clone the repository:
@@ -90,19 +116,22 @@ git clone https://github.com/Juriez/Effzedusr.git
 cd Effzedusr
 ```
 
-2. Install dependencies:
+2. Install requirements:
+   pip install -r requirements.txt
+```
+3. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Start the frontend:
+4. Start the frontend:
 
 ```bash
 npm run dev
 ```
 
-4. Start the backend:
+5. Start the backend:
 
 ```bash
 node app.js
