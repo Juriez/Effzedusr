@@ -117,6 +117,7 @@ cd Effzedusr
 ```
 
 2. Install requirements:
+```bash
    pip install -r requirements.txt
 ```
 3. Install dependencies:
