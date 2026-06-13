@@ -72,7 +72,7 @@ Write-Host "5. Zero-shot super-resolution ..." -ForegroundColor Yellow
     --test_lr "..\RealworldData\Data\WideView\$ImageName" `
     --test_hr "..\RealworldData\Data\TeleView\$ImageName" `
     --Invari_map "..\RealworldData\Data\DIAlign\iPhone11_wideSRTele\$ImageBase\PatchDisOut.npy" `
-    --output_path "D:\ZeDuSR\zedusr\SR\Results_Real_$ImageBase\" `
+    --output_path "..\SR\Results_Real_$ImageBase\" `
     --dataset "iPhone11_wideSRTele\$ImageBase"
 Write-Host "Super-resolution finished." -ForegroundColor Green
 Write-Host ""
