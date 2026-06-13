@@ -14,7 +14,7 @@ export default function ResultsPage() {
     const downloadImage = async () => {
         try {
             setDownloading(true);
-            const imageUrl = `http://localhost:3000/SR/Results_Real_${imageName.split(".")[0]}/iPhone11_wideSRTele/${imageName.split(".")[0]}/out_200SR.png`;
+            const imageUrl = `http://localhost:3000/SR/Results_Real_${imageName.split(".")[0]}/iPhone11_wideSRTele/${imageName.split(".")[0]}/out_300SR.png`;
 
             const response = await fetch(imageUrl);
             const blob = await response.blob();
@@ -213,7 +213,7 @@ export default function ResultsPage() {
         );
     }
 
-    const finalImageUrl = `http://localhost:3000/SR/Results_Real_${imageName.split(".")[0]}/iPhone11_wideSRTele/${imageName.split(".")[0]}/out_5SR.png`;
+    const finalImageUrl = `http://localhost:3000/SR/Results_Real_${imageName.split(".")[0]}/iPhone11_wideSRTele/${imageName.split(".")[0]}/out_300SR.png`;
 
     return (
         <div style={styles.container}>
@@ -312,7 +312,7 @@ export default function ResultsPage() {
                                         <span>🎯</span> Aligned Image
                                     </div>
                                     <img
-                                        src={`http://localhost:3000/Data/DIAlign/iPhone11_wideSRTele/${imageName.split(".")[0]}/out_20_warp.png`}
+                                        src={`http://localhost:3000/Data/DIAlign/iPhone11_wideSRTele/${imageName.split(".")[0]}/out_30_warp.png`}
                                         alt="Aligned Image"
                                         style={styles.image}
                                         onClick={(e) => window.open(e.target.src, '_blank')}
