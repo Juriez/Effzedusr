@@ -4,10 +4,7 @@ Data/
 ├── HighRes/
      └── TeleView
            └── telephoto.jpg/jpeg
-```
-```text
-Data/
-├── HighRes/
      └── WideView
            └── widephoto.jpg/jpeg
 ```
+
