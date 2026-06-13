@@ -142,9 +142,10 @@ https://download.pytorch.org/models/vgg16-397923af.pth
 ### Placement
 
 Place the file in:
-
+```text
 preTrained/
 └── vgg16-397923af.pth
+```
 ### Load in Code (Alignment/models/loss.py)
 ```bash
 vgg = vgg16
