@@ -277,5 +277,5 @@ This project is not just a script it's a **full-stack AI-powered image enhanceme
 ---
 ---
 ## Acknowledgement
-We thank the authors of ZeDuSR(https://github.com/XrKang/ZeDuSR) for sharing their codes & thank the authors of DCSR(https://github.com/Tengfei-Wang/DCSR) for sharing the CameraFusion Dataset.
+We thank the authors of [ZeDuSR](https://github.com/XrKang/ZeDuSR) for sharing their codes & thank the authors of [DCSR](https://github.com/Tengfei-Wang/DCSR) for sharing the CameraFusion Dataset.
 
