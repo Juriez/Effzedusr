@@ -129,8 +129,8 @@ npm install
 
 This project requires two pretrained components:
 
-VGG16 (for perceptual loss)
-META-RCAN (for super-resolution refinement)
+## VGG16 (for perceptual loss)
+## META-RCAN (for super-resolution refinement)
 
 ## 1. VGG16 (Perceptual Network)
 Download Link
