@@ -125,14 +125,59 @@ cd Effzedusr
 ```bash
 npm install
 ```
+4. Download Pre-trained Models
 
-4. Start the frontend:
+This project requires two pretrained components:
+
+VGG16 (for perceptual loss)
+META-RCAN (for super-resolution refinement)
+1. VGG16 (Perceptual Network)
+Download Link
+
+Download pretrained VGG16 weights:
+
+https://download.pytorch.org/models/vgg16-397923af.pth
+
+Placement
+
+Place the file in:
+
+preTrained/
+└── vgg16-397923af.pth
+Load in Code (Alignment/models/loss.py)
+import torch
+from torchvision.models import vgg16
+
+vgg = vgg16(pretrained=False)
+vgg.load_state_dict(torch.load(
+    '../preTrained/vgg16-397923af.pth',
+    map_location='cpu'
+))
+vgg.eval()
+2. META-RCAN (Super-Resolution Model)
+Repository Source
+
+Download META-RCAN from the official RCAN repository:
+
+https://github.com/yulunzhang/RCAN
+
+Steps
+Clone the repository:
+git clone https://github.com/yulunzhang/RCAN.git
+Download pretrained META-RCAN weights (from RCAN releases or model zoo inside repo).
+Place the pretrained model in:
+SR/
+└── models/
+    └── preTrained/
+        └── RCAN_BIX4.pt
+
+5. Start the frontend:
 
 ```bash
 npm run dev
 ```
 
-5. Start the backend:
+6. Start the backend:
 
 ```bash
 node app.js
