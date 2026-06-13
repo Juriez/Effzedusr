@@ -1,3 +1,13 @@
-
-After cloning this project remove all .txt file of RealworldData/Data/Highres/Teleview, RealworldData/Data/Highres/Wideeview  ...
-These were added just to track the pipeline.
+Input images must be placed in following folders:
+```text
+Data/
+├── HighRes/
+     └── TeleView
+           └── telephoto.jpg/jpeg
+```
+```text
+Data/
+├── HighRes/
+     └── WideView
+           └── widephoto.jpg/jpeg
+```
