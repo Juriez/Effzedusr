@@ -8,7 +8,8 @@ Before running this module, ensure that the following folder structure is mainta
 Low_Light_Image_Enhancement/
 ├── Input_images/
 ├── results/
-│   └── outputs/
+│   └── Output/
+│         └── Input_images/
 └── Low_Light_Image_Enhancement.py
 ```
 
