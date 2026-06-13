@@ -2,10 +2,15 @@ import os
 from PIL import Image,ImageOps
 
 # Set source and destination folders
-source_dir_tele = "D:\ZeDuSR\zedusr\RealworldData\Data\HighRes\TeleView"
-dest_dir_tele = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView"
-source_dir_wide = "D:\ZeDuSR\zedusr\RealworldData\Data\HighRes\WideView"
-dest_dir_wide = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView"
+# source_dir_tele = "D:\ZeDuSR\zedusr\RealworldData\Data\HighRes\TeleView"
+# dest_dir_tele = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView"
+# source_dir_wide = "D:\ZeDuSR\zedusr\RealworldData\Data\HighRes\WideView"
+# dest_dir_wide = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView"
+
+source_dir_tele = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Data", "HighRes", "TeleView")
+dest_dir_tele   = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Data", "TeleView")
+source_dir_wide = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Data", "HighRes", "WideView")
+dest_dir_wide   = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Data", "WideView")
 
 # Create destination directory if it doesn't exist
 os.makedirs(dest_dir_tele, exist_ok=True)
