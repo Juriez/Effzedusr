@@ -146,7 +146,7 @@ Place the file in:
 preTrained/
 └── vgg16-397923af.pth
 ```
-### Load in Code (Alignment/models/loss.py)
+### Load in Code (Alignment/utils/loss.py)
 ```bash
 vgg = vgg16
 vgg.load_state_dict(torch.load(
