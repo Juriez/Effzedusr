@@ -147,6 +147,7 @@ preTrained/
 └── vgg16-397923af.pth
 ```
 ### Load in Code (Alignment/utils/loss.py)
+Replace the local path with the following:
 ```bash
 vgg = vgg16
 vgg.load_state_dict(torch.load(
