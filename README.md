@@ -192,7 +192,10 @@ Users access the Real-Time Dual-Lens Photo Enhancer through any modern web brows
 ### EffZeDuSR
 In this mode, users upload a pair of simultaneously captured TeleView and WideView images. The system automatically executes the full pipeline (pre-alignment, color correction, deep alignment and Meta-RCAN super-resolution) and generates a high-resolution wide-angle output that combines broad scene coverage with telephoto-level sharpness.
 <img width="753" height="729" alt="image" src="https://github.com/user-attachments/assets/bb85488e-6d96-42f6-8e1f-2d5251ced655" />
-Final super resolution output combining both views for maximum detail and quality:
+#### Output after Alignment procedure
+<img width="957" height="636" alt="image" src="https://github.com/user-attachments/assets/b23a1710-37b6-4e3e-a0a5-37c16b59ecab" />
+
+#### Final super resolution output combining both views for maximum detail and quality:
 <img width="646" height="712" alt="image" src="https://github.com/user-attachments/assets/3721f2c0-ef31-4a79-be1f-4c14adec7a74" />
 
 ### Low-Light Image Enhancement
