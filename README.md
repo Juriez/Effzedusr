@@ -186,6 +186,21 @@ node app.js
 
 ---
 
+## User interface and manual
+Users access the Real-Time Dual-Lens Photo Enhancer through any modern web browser. The clean and intuitive home page provides two distinct modes: Zero-Shot Dual-Lens Super-Resolution and Low-Light Image Enhancement. Both modules feature a step-by-step guided interface with progress indicators, intermediate result previews and one-click download options.
+
+### EffZeDuSR
+In this mode, users upload a pair of simultaneously captured TeleView and WideView images. The system automatically executes the full pipeline (pre-alignment, color correction, deep alignment and Meta-RCAN super-resolution) and generates a high-resolution wide-angle output that combines broad scene coverage with telephoto-level sharpness.
+<img width="753" height="729" alt="image" src="https://github.com/user-attachments/assets/bb85488e-6d96-42f6-8e1f-2d5251ced655" />
+Final super resolution output combining both views for maximum detail and quality:
+<img width="646" height="712" alt="image" src="https://github.com/user-attachments/assets/3721f2c0-ef31-4a79-be1f-4c14adec7a74" />
+
+### Low-Light Image Enhancement
+Users upload a single low-light image. The system applies the atmospheric scattering model with gamma correction prior to restore visibility, contrast and color. The interface displays the original image, processing progress and the final enhanced result.
+<img width="1225" height="811" alt="image" src="https://github.com/user-attachments/assets/3e61d26b-ebd0-425b-9c73-01e6112c65c4" />
+
+Both modules are fully automated, require no manual parameter tuning and provide real-time feedback through progress modals, making the tool accessible even for non-technical users.
+
 ## 🖥️ How to Use the Web App
 
 1. Open your browser and navigate to:
