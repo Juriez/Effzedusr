@@ -150,8 +150,9 @@ preTrained/
 Replace the local path with the following:
 ```bash
 vgg = vgg16
-vgg.load_state_dict(torch.load(
-    '../preTrained/vgg16-397923af.pth'))
+current_dir = os.path.dirname(os.path.abspath(__file__))
+vgg_path = os.path.abspath(os.path.join(current_dir, '..', '..', 'preTrained', 'vgg16-397923.pth'))
+vgg.load_state_dict(torch.load(vgg_path))
 ```
 ## 2. META-RCAN (Super-Resolution Model)
 
