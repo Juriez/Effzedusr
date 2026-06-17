@@ -172,6 +172,7 @@ SR/
     └── preTrained/
         └── RCAN_BIX4.pt
 ```
+Change the pretrained path in SR/models/model.py.
 
 5. Start the frontend:
 
