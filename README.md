@@ -188,6 +188,19 @@ node app.js
 
 ---
 
+### Datasets
+The proposed Real-Time Photo Enhancer is evaluated using two well-established public datasets, corresponding to each of the primary modules:
+
+1. Dual-Camera Super-Resolution (EffZeDuSR)
+For the EffZeDuSR module, we utilize the [CameraFusion](https://github.com/Tengfei-Wang/DCSR) Dataset.
+
+Details: This dataset provides paired wide-angle and telephoto images captured simultaneously from smartphone dual-camera systems, featuring a wide-angle view (26mm lens) and a telephoto view (52mm lens) to evaluate realistic reference-based super-resolution.
+
+2. Low-Light Image Enhancement (LLIE)
+For the low-light enhancement module, we employ the [LOL (LOw-Light)](https://daooshee.github.io/BMVC2018website/) Dataset.
+
+Details: The LOL dataset contains real-world low-light images paired with their corresponding normal-light reference images. It is the benchmark standard for training and evaluating supervised low-light image decomposition and enhancement models.
+
 ## User interface and manual
 Users access the Real-Time Dual-Lens Photo Enhancer through any modern web browser. The clean and intuitive home page provides two distinct modes: Zero-Shot Dual-Lens Super-Resolution and Low-Light Image Enhancement. Both modules feature a step-by-step guided interface with progress indicators, intermediate result previews and one-click download options.
 
