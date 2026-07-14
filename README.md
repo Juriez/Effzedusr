@@ -201,6 +201,10 @@ For the low-light enhancement module, we employ the [LOL (LOw-Light)](https://da
 
 Details: The LOL dataset contains real-world low-light images paired with their corresponding normal-light reference images. It is the benchmark standard for training and evaluating supervised low-light image decomposition and enhancement models.
 
+Both datasets were directly integrated into the evaluation pipeline to validate the effectiveness, speed and visual quality of the proposed tool.
+
+Besides the mentioned datasets, we evaluated both the zero shot procedure and the low light enhancement procedure using multiple image pairs taken by different devices.
+
 ## User interface and manual
 Users access the Real-Time Dual-Lens Photo Enhancer through any modern web browser. The clean and intuitive home page provides two distinct modes: Zero-Shot Dual-Lens Super-Resolution and Low-Light Image Enhancement. Both modules feature a step-by-step guided interface with progress indicators, intermediate result previews and one-click download options.
 
