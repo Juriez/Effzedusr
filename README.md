@@ -288,16 +288,17 @@ After completion:
 #### 📁 Output file Structure
 
 Typical EffZeDuSR outputs include:
-
+```
 RealworldData/
 └── Data/
     ├── TeleView_SIFTAlign/
     ├── WideView_crop/
     └── DIAlign/
-
+```
+```
 SR/
 └── Results_Real_<ImageName>/
-
+```
 The intermediate outputs allow users to inspect the results of different stages of the pipeline.
 
 
