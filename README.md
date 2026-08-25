@@ -1,19 +1,32 @@
 # 🚀 EffZeDuSR Real-World Image Super-Resolution Pipeline
 
-A complete end-to-end pipeline for **real-world image alignment and zero-shot super-resolution (ZSSR)**. This project processes wide and telephoto image pairs, aligns them through multiple stages, and generates a high-quality enhanced output.
+EffZeDuSR is an end-to-end pipeline for **real-world dual-camera image alignment and zero-shot super-resolution (ZSSR)**. The system processes simultaneously captured wide-view and tele-view images, performs multi-stage alignment and correction, and generates a high-resolution enhanced output.
+
+The repository also provides a **low-light image enhancement (LLIE)** module, allowing both enhancement procedures to be accessed through a browser-based interface.
 
 ---
 
 ## 📌 Overview
 
-EffZeDuSR is designed to tackle real-world super-resolution challenges by combining:
+EffZeDuSR combines classical computer vision and deep learning techniques to address real-world image enhancement challenges, including:
 
-* Classical computer vision (SIFT alignment)
-* Color correction techniques
-* Deep iterative alignment
-* Zero-shot super-resolution (ZSSR)
+- Geometric misalignment between dual-camera images
+- Differences in exposure and color characteristics
+- Noise and other real-world image distortions
+- Limited availability of paired high-resolution training data
+- Image-specific super-resolution through zero-shot learning
 
-The pipeline ensures robust enhancement even with real-world distortions such as misalignment, exposure differences, and noise.
+The EffZeDuSR pipeline consists of:
+
+- Image resizing
+- SIFT-based pre-alignment
+- Color and luminance correction
+- Iterative deep alignment
+- META-RCAN-based super-resolution refinement
+
+The repository additionally includes a low-light image enhancement procedure based on atmospheric scattering and gamma correction.
+
+The pipeline ensures robust enhancement even with real-world distortions such as misalignment, exposure differences and noise.
 
 ---
 
@@ -48,13 +61,142 @@ The execution flow consists of **five sequential stages**:
 
 ---
 
-## ▶️ Running via PowerShell Script
+## System Requirements
 
-### 🔹 Command
+### Software Requirements
+The current tested environment is:
 
-```powershell
+| Component | Tested Version |
+| -------- | -------- |
+| Python  | 3.13.1  | 
+| Node.js  | v22.12.0  | 
+| npm | v10.9.0  | 
+| Torchvision  | 0.23.0  | 
+| PyTorch  | 2.8.0  | 
+| OpenCV  | 4.12.0.88  | 
+
+Python dependencies are specified in requirements.txt.
+
+```txt
+numpy==2.2.2
+pandas==2.2.3
+pillow==11.3.0
+matplotlib==3.10.6
+nltk==3.9.2
+opencv-python==4.12.0.88
+scikit-learn==1.6.1
+scikit-image==0.25.2
+scipy==1.15.1
+seaborn==0.13.2
+torch==2.8.0
+torchvision==0.23.0
+tqdm==4.67.1
+```
+### Hardware Requirements
+The pipeline performs inference-time optimization and therefore requires substantially more computation than a conventional feed-forward inference-only model.
+
+### Minimum configuration
+- 8 GB system RAM recommended
+- Modern x86-64 CPU
+- Sufficient disk space for models, intermediate results, and generated outputs
+- Python-compatible operating system
+- GPU is recommended for practical execution
+### Recommended configuration
+- NVIDIA CUDA-capable GPU
+- 8 GB or more GPU memory
+- 16 GB or more system RAM
+
+
+Important: The RTX 4060 is the reference GPU used for the primary performance evaluation. Users without an RTX 4060 can still run the pipeline, but execution time may differ substantially depending on CPU/GPU architecture and available memory.
+
+## 📦 Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/Juriez/Effzedusr.git
+cd Effzedusr
+```
+
+2. Install requirements:
+```bash
+   pip install -r requirements.txt
+```
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+### 🧠 Pretrained Models
+The repository requires two pretrained components.
+
+#### 1. VGG16
+
+VGG16 is used for perceptual loss during the alignment procedure.
+
+#### Download
+
+Download the pretrained VGG16 weights from PyTorch:
+
+https://download.pytorch.org/models/vgg16-397923af.pth
+
+#### Placement
+
+Place the downloaded file at:
+
+preTrained/
+└── vgg16-397923af.pth
+
+Ensure that the filename used in the code matches the downloaded filename.
+
+
+
+#### Load in Code (Alignment/utils/loss.py)
+Replace the local path with the following:
+```bash
+vgg = vgg16
+current_dir = os.path.dirname(os.path.abspath(__file__))
+vgg_path = os.path.abspath(os.path.join(current_dir, '..', '..', 'preTrained', 'vgg16-397923.pth'))
+vgg.load_state_dict(torch.load(vgg_path))
+```
+
+#### 2. META-RCAN
+
+META-RCAN is used for super-resolution refinement.
+
+The implementation is based on the official RCAN repository:
+
+https://github.com/yulunzhang/RCAN
+
+#### Clone the repository:
+
+git clone https://github.com/yulunzhang/RCAN.git
+
+Place the required pretrained model at:
+
+SR/
+└── models/
+    └── preTrained/
+        └── RCAN_BIX4.pt
+
+Update the pretrained-model path in:
+
+SR/models/model.py
+
+if necessary.
+
+
+## ▶️ Running the Complete Pipeline
+
+### PowerShell
+The complete pipeline can be executed using:
+```
 .\run_whole_project.ps1 -ImageName "Car.jpeg"
 ```
+The input image must exist in the appropriate input directory.
+
+The script automatically executes the pipeline stages sequentially.
 
 ### 🔹 Description
 
@@ -81,112 +223,83 @@ SR\Results_Real_<ImageName>
 
 You can also run the project through a **browser-based UI**.
 
-## Requirements
-
-### Environment
-
-- Python 3.13.1
-- Node.js v22.12.0
-- npm v10.9.0
-
-### Python Dependencies
-
-```txt
-numpy==2.2.2
-pandas==2.2.3
-pillow==11.3.0
-matplotlib==3.10.6
-nltk==3.9.2
-opencv-python==4.12.0.88
-scikit-learn==1.6.1
-scikit-image==0.25.2
-scipy==1.15.1
-seaborn==0.13.2
-torch==2.8.0
-torchvision==0.23.0
-tqdm==4.67.1
+Start the frontend:
 ```
-
-### 🔹 Setup Instructions
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/Juriez/Effzedusr.git
-cd Effzedusr
-```
-
-2. Install requirements:
-```bash
-   pip install -r requirements.txt
-```
-3. Install dependencies:
-
-```bash
-npm install
-```
-4. Download Pre-trained Models
-
-This project requires two pretrained components:
-
-## VGG16 (for perceptual loss)
-## META-RCAN (for super-resolution refinement)
-
-## 1. VGG16 (Perceptual Network)
-Download Link
-
-### Download pretrained VGG16 weights:
-
-https://download.pytorch.org/models/vgg16-397923af.pth
-
-### Placement
-
-Place the file in:
-```text
-preTrained/
-└── vgg16-397923af.pth
-```
-### Load in Code (Alignment/utils/loss.py)
-Replace the local path with the following:
-```bash
-vgg = vgg16
-current_dir = os.path.dirname(os.path.abspath(__file__))
-vgg_path = os.path.abspath(os.path.join(current_dir, '..', '..', 'preTrained', 'vgg16-397923.pth'))
-vgg.load_state_dict(torch.load(vgg_path))
-```
-## 2. META-RCAN (Super-Resolution Model)
-
-### Download META-RCAN from the official RCAN repository:
-
-https://github.com/yulunzhang/RCAN
-
-### Clone the repository:
-```bash
-git clone https://github.com/yulunzhang/RCAN.git
-```
-### Download pretrained META-RCAN weights.
-Place the pretrained model in:
-```text
-SR/
-└── models/
-    └── preTrained/
-        └── RCAN_BIX4.pt
-```
-Change the pretrained path in SR/models/model.py.
-
-5. Start the frontend:
-
-```bash
 npm run dev
 ```
-
-6. Start the backend:
-
-```bash
+Start the backend:
+```
 node app.js
 ```
 
+### 🧑‍💻 Using the Web Application
+#### EffZeDuSR
+1. Open your browser and navigate to:
+
+```
+http://localhost:5173
+```
+Select the EffZeDuSR mode.
+
+2. Upload two images:
+
+   * Wide-view image
+   * Tele-view image
+  
+3. Click:
+   👉 **"Upload Both Images to Continue"**
+   **Wide-view, Tele-view image name stored in the input folder & output filename must be same.** 
+   Like Wide-view saved in wide view folder as Cat.jpg, teleview image must be saved as Cat.jpg in teleview folder & output filename must be select as Cat.jpg.
+
+5. You will be redirected to the processing page
+
+6. Enter output filename:
+
+```
+Example: Car.jpeg
+```
+
+6. Click:
+   👉 **"Start Process"**
 ---
+Wait for the alignment and super-resolution stages to complete.
+View and download the final output.
+
+The application displays intermediate processing results and the final enhanced image.
+
+#### Low-Light Image Enhancement
+
+The LLIE module accepts a single low-light image.
+
+The system applies the implemented atmospheric-scattering/gamma-correction-based enhancement procedure and generates an enhanced output.
+
+
+#### 📊 Output in browser
+
+After completion:
+
+* Navigate to the **Results Page**
+* The final enhanced image will be displayed
+* You can:
+
+  * 👁️ View the image
+  * ⬇️ Download it locally
+
+#### 📁 Output file Structure
+
+Typical EffZeDuSR outputs include:
+
+RealworldData/
+└── Data/
+    ├── TeleView_SIFTAlign/
+    ├── WideView_crop/
+    └── DIAlign/
+
+SR/
+└── Results_Real_<ImageName>/
+
+The intermediate outputs allow users to inspect the results of different stages of the pipeline.
+
 
 ### Datasets
 The proposed Real-Time Photo Enhancer is evaluated using two well-established public datasets, corresponding to each of the primary modules:
@@ -223,34 +336,7 @@ Users upload a single low-light image. The system applies the atmospheric scatte
 
 Both modules are fully automated, require no manual parameter tuning and provide real-time feedback through progress modals, making the tool accessible even for non-technical users.
 
-## 🖥️ How to Use the Web App
 
-1. Open your browser and navigate to:
-
-```
-http://localhost:5173
-```
-
-2. Upload two images:
-
-   * Wide-view image
-   * Tele-view image
-
-3. Click:
-   👉 **"Upload Both Images to Continue"**
-
-4. You will be redirected to the processing page
-
-5. Enter output filename:
-
-```
-Example: Car.jpeg
-```
-
-6. Click:
-   👉 **"Start Process"**
-
----
 
 ## ⏳ Processing Time
 
@@ -259,16 +345,6 @@ Example: Car.jpeg
 
 ---
 
-## 📊 Output
-
-After completion:
-
-* Navigate to the **Results Page**
-* The final enhanced image will be displayed
-* You can:
-
-  * 👁️ View the image
-  * ⬇️ Download it locally
 
 ---
 
