@@ -144,10 +144,10 @@ https://download.pytorch.org/models/vgg16-397923af.pth
 #### Placement
 
 Place the downloaded file at:
-
+```
 preTrained/
 └── vgg16-397923af.pth
-
+```
 Ensure that the filename used in the code matches the downloaded filename.
 
 
@@ -174,12 +174,12 @@ https://github.com/yulunzhang/RCAN
 git clone https://github.com/yulunzhang/RCAN.git
 
 Place the required pretrained model at:
-
+```
 SR/
 └── models/
     └── preTrained/
         └── RCAN_BIX4.pt
-
+```
 Update the pretrained-model path in:
 
 SR/models/model.py
