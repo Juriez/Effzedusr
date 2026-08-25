@@ -247,7 +247,7 @@ Select the EffZeDuSR mode.
    * Tele-view image
   
 3. Click:
-   👉 **"Upload Both Images to Continue"**
+   👉 **"Upload Both Images to Continue"** <br>
    **Wide-view, Tele-view image name stored in the input folder & output filename must be same.** 
    Like Wide-view saved in wide view folder as Cat.jpg, teleview image must be saved as Cat.jpg in teleview folder & output filename must be select as Cat.jpg.
 
