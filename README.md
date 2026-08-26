@@ -345,6 +345,10 @@ In this mode, users upload a pair of simultaneously captured TeleView and WideVi
 #### Final super resolution output combining both views for maximum detail and quality:
 <img width="646" height="712" alt="image" src="https://github.com/user-attachments/assets/3721f2c0-ef31-4a79-be1f-4c14adec7a74" />
 
+
+#### Evaluation Metrix scores
+<img width="596" height="179" alt="Psnr+SSIM+LPIPS" src="https://github.com/user-attachments/assets/42c28b5f-55dc-4619-a02d-c491a66154a0" />
+
 ### Low-Light Image Enhancement
 Users upload a single low-light image. The system applies the atmospheric scattering model with gamma correction prior to restore visibility, contrast and color. The interface displays the original image, processing progress and the final enhanced result.
 <img width="1225" height="811" alt="image" src="https://github.com/user-attachments/assets/3e61d26b-ebd0-425b-9c73-01e6112c65c4" />
