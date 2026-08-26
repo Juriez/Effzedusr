@@ -242,9 +242,23 @@ http://localhost:5173
 Select the EffZeDuSR mode.
 
 2. Upload two images:
-
    * Wide-view image
    * Tele-view image
+   **Create the following folder structure & put stored the tele & wide view images in the corresponding folder**
+   ```
+   zedusr/
+      └── Alignment/
+      └── RealworldData/
+      └── Frontend/
+      └── Input/
+         └── Tele/
+              ├── example.jpg(Tele-view image)
+         └── Wide/
+              ├── example.jpg(Wide-view image)
+      .
+      .
+      .
+   ```
   
 3. Click:
    👉 **"Upload Both Images to Continue"** <br>
