@@ -1,5 +1,6 @@
 import numpy as np
 import torch
+import lpips
 import os
 from PIL import Image
 import torch.nn.functional as F
@@ -9,6 +10,12 @@ from scipy.ndimage import filters
 from skimage.metrics import peak_signal_noise_ratio as compare_psnr
 import math
 import cv2
+
+# lpips
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+lpips_model = lpips.LPIPS(net='alex').to(device)
+lpips_model.eval()
 
 def selfEnsemble(img, model, device):
     img_0 = img
@@ -218,6 +225,27 @@ def cal_ssim_np(img1, img2):
             return ssim(np.squeeze(img1), np.squeeze(img2))
     else:
         raise ValueError('Wrong input image dimensions.')
+    
+
+
+# Lpips
+
+def cal_lpips(pred, hr):
+    """
+    pred, hr: torch tensors (B, C, H, W) in range [0, 1]
+    Returns: mean LPIPS of the batch (lower is better)
+    """
+    with torch.no_grad():
+        # Move inputs to the same device as the LPIPS model
+        pred = pred.to(device)
+        hr   = hr.to(device)
+
+        # LPIPS expects range [-1, 1]
+        pred_ = pred * 2 - 1
+        hr_   = hr   * 2 - 1
+
+        dist = lpips_model(pred_, hr_)
+        return dist.mean().item()
 
 
 def compare_metric(img_pred, img_gt):
