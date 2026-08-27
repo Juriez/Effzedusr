@@ -91,6 +91,7 @@ seaborn==0.13.2
 torch==2.8.0
 torchvision==0.23.0
 tqdm==4.67.1
+lpips==0.1.4
 ```
 ### Hardware Requirements
 The pipeline performs inference-time optimization and therefore requires substantially more computation than a conventional feed-forward inference-only model.
