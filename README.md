@@ -346,7 +346,7 @@ In this mode, users upload a pair of simultaneously captured TeleView and WideVi
 <img width="646" height="712" alt="image" src="https://github.com/user-attachments/assets/3721f2c0-ef31-4a79-be1f-4c14adec7a74" />
 
 
-#### Evaluation Metrix scores
+#### Evaluation Metrics
 <img width="596" height="179" alt="Psnr+SSIM+LPIPS" src="https://github.com/user-attachments/assets/42c28b5f-55dc-4619-a02d-c491a66154a0" />
 
 ### Low-Light Image Enhancement
