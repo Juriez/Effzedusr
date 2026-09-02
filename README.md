@@ -245,7 +245,7 @@ Select the EffZeDuSR mode.
 2. Upload two images:
    * Wide-view image
    * Tele-view image
-   **Create the following folder structure & put stored the tele & wide view images in the corresponding folder**
+   **Create the following folder structure & stored the tele & wide view images in the corresponding folder**
    ```
    zedusr/
       └── Alignment/
@@ -285,6 +285,15 @@ The application displays intermediate processing results and the final enhanced 
 #### Low-Light Image Enhancement
 
 The LLIE module accepts a single low-light image.
+**Create the folowing folder structure**
+```
+zedusr/
+      └── Low_Light_Image_Enhancement/
+                     └── Input_images/
+                           ├── example.jpg(low light image)
+                     └── results/Output/Input_images
+                           ├── result.jpg(enahanced low light image)
+```
 
 The system applies the implemented atmospheric-scattering/gamma-correction-based enhancement procedure and generates an enhanced output.
 
