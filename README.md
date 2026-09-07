@@ -190,6 +190,34 @@ if necessary.
 
 ## ▶️ Running the Complete Pipeline
 
+### 🐳 Docker Deployment & Quick Start
+
+The project is fully **Dockerized** to ensure consistent development and production environments across different systems. The application services (frontend, backend and processing pipelines) are managed through a unified environment.
+
+#### Prerequisites
+Make sure you have the following installed on your local machine:
+*   [Docker Desktop](https://docker.com) (with Docker Compose enabled)
+*   `make` utility (pre-installed on Linux/macOS; use Git Bash or Chocolatey on Windows)
+
+#### Running the Application
+
+You can spin up the entire multi-container environment with a single command from the project root directory:
+
+```bash
+make run
+```
+
+This automated automation command takes care of:
+1.  Building your Docker images from the local configurations.
+2.  Spinning up the background network architecture.
+3.  Launching the processing backend and user frontend simultaneously.
+
+To shut down the environment and stop all running containers safely, run:
+```bash
+docker-compose down
+```
+
+
 ### PowerShell
 The complete pipeline can be executed using:
 ```
