@@ -2,10 +2,17 @@ import os
 from PIL import Image,ImageOps
 
 # Set source and destination folders
+<<<<<<< HEAD
 # source_dir_tele = "D:/ZeDuSR/zedusr/RealworldData/Data/HighRes/TeleView"
 # dest_dir_tele = "D:/ZeDuSR/zedusr/RealworldData/Data/TeleView"
 # source_dir_wide = "D:/ZeDuSR/zedusr/RealworldData/Data/HighRes/WideView"
 # dest_dir_wide = "D:/ZeDuSR/zedusr/RealworldData/Data/WideView"
+=======
+# source_dir_tele = "D:\ZeDuSR\zedusr\RealworldData\Data\HighRes\TeleView"
+# dest_dir_tele = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView"
+# source_dir_wide = "D:\ZeDuSR\zedusr\RealworldData\Data\HighRes\WideView"
+# dest_dir_wide = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView"
+>>>>>>> recovered-files
 
 source_dir_tele = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Data", "HighRes", "TeleView")
 dest_dir_tele   = os.path.join(os.path.dirname(os.path.dirname(__file__)), "Data", "TeleView")

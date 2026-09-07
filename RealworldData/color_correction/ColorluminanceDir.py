@@ -45,6 +45,7 @@ def process_image(args):
 if __name__ == "__main__":
     start_time = time.time()
 
+<<<<<<< HEAD
     # 1. Dynamically find the directory where THIS script lives (RealworldData/color_correction)
     current_script_dir = Path(__file__).resolve().parent
 
@@ -52,6 +53,12 @@ if __name__ == "__main__":
     data_dir = current_script_dir.parent / "Data"
 
     # 3. Define absolute paths based on the dynamic calculation
+=======
+    current_script_dir = Path(__file__).resolve().parent
+
+    data_dir = current_script_dir.parent / "Data"
+    
+>>>>>>> recovered-files
     ref_folder = str(data_dir / "WideView_crop_bic")
     input_folder = str(data_dir / "TeleView_SIFTAlign")
     save_folder = str(data_dir / "TeleView_SIFTAlign_cor")
