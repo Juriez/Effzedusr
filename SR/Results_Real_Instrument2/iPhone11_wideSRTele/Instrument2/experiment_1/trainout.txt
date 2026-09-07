@@ -1,9 +1,85 @@
-Namespace(train_lr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Instrument2\\out_20_warp.png', train_hr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Instrument2\\HR.png', Invari_map='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Instrument2\\PatchDisOut.npy', test_lr='..\\RealworldData\\Data\\WideView\\Instrument2.jpeg', test_hr='..\\RealworldData\\Data\\TeleView\\Instrument2.jpeg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\Instrument2', output_path='D:\\ZeDuSR\\zedusr\\SR\\Results_Real_Instrument2\\', eval_interval=5, epochs=11, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
+Namespace(train_lr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Instrument2\\out_20_warp.png', train_hr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Instrument2\\HR.png', Invari_map='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\Instrument2\\PatchDisOut.npy', test_lr='..\\RealworldData\\Data\\WideView\\Instrument2.jpeg', test_hr='..\\RealworldData\\Data\\TeleView\\Instrument2.jpeg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\Instrument2', output_path='D:\\ZeDuSR\\zedusr\\SR\\Results_Real_Instrument2\\', eval_interval=100, epochs=201, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
 Starting Epoch: 0
-Total Epoches: 11
+Total Epoches: 201
 
- iter: 0/11, lr: 0.000200000 | PSNR:4.169 | loss: 0.95791 | loss_rec:0.9579
+ iter: 0/201, lr: 0.000200000 | PSNR:9.895 | loss: 0.33043 | loss_rec:0.3304
 
- iter: 5/11, lr: 0.000100000 | PSNR:14.64 | loss: 0.16622 | loss_rec:0.1662
+ iter: 5/201, lr: 0.000100000 | PSNR:12.84 | loss: 0.21913 | loss_rec:0.2191
 
- iter: 10/11, lr: 0.000100000 | PSNR:15.4 | loss: 0.14925 | loss_rec:0.1493
+ iter: 10/201, lr: 0.000100000 | PSNR:15.24 | loss: 0.15051 | loss_rec:0.1505
+
+ iter: 15/201, lr: 0.000100000 | PSNR:16.76 | loss: 0.12387 | loss_rec:0.1239
+
+ iter: 20/201, lr: 0.000100000 | PSNR:18.01 | loss: 0.10338 | loss_rec:0.1034
+
+ iter: 25/201, lr: 0.000100000 | PSNR:17.72 | loss: 0.10558 | loss_rec:0.1056
+
+ iter: 30/201, lr: 0.000100000 | PSNR:18.06 | loss: 0.10072 | loss_rec:0.1007
+
+ iter: 35/201, lr: 0.000100000 | PSNR:18.42 | loss: 0.09809 | loss_rec:0.09809
+
+ iter: 40/201, lr: 0.000100000 | PSNR:18.81 | loss: 0.09228 | loss_rec:0.09228
+
+ iter: 45/201, lr: 0.000100000 | PSNR:18.37 | loss: 0.09686 | loss_rec:0.09686
+
+ iter: 50/201, lr: 0.000100000 | PSNR:19.01 | loss: 0.08867 | loss_rec:0.08867
+
+ iter: 55/201, lr: 0.000100000 | PSNR:18.77 | loss: 0.09097 | loss_rec:0.09097
+
+ iter: 60/201, lr: 0.000100000 | PSNR:19.01 | loss: 0.08904 | loss_rec:0.08904
+
+ iter: 65/201, lr: 0.000100000 | PSNR:18.99 | loss: 0.08910 | loss_rec:0.0891
+
+ iter: 70/201, lr: 0.000100000 | PSNR:18.85 | loss: 0.09111 | loss_rec:0.09111
+
+ iter: 75/201, lr: 0.000100000 | PSNR:19.38 | loss: 0.08473 | loss_rec:0.08473
+
+ iter: 80/201, lr: 0.000100000 | PSNR:19.02 | loss: 0.08972 | loss_rec:0.08972
+
+ iter: 85/201, lr: 0.000100000 | PSNR:19.49 | loss: 0.08474 | loss_rec:0.08474
+
+ iter: 90/201, lr: 0.000100000 | PSNR:19.38 | loss: 0.08462 | loss_rec:0.08462
+
+ iter: 95/201, lr: 0.000100000 | PSNR:19.17 | loss: 0.08705 | loss_rec:0.08705
+
+ iter: 100/201, lr: 0.000100000 | PSNR:18.96 | loss: 0.08961 | loss_rec:0.08961
+
+ iter: 105/201, lr: 0.000100000 | PSNR:18.7 | loss: 0.09399 | loss_rec:0.09399
+
+ iter: 110/201, lr: 0.000100000 | PSNR:19.23 | loss: 0.08712 | loss_rec:0.08712
+
+ iter: 115/201, lr: 0.000100000 | PSNR:19.24 | loss: 0.08639 | loss_rec:0.08639
+
+ iter: 120/201, lr: 0.000100000 | PSNR:18.49 | loss: 0.09765 | loss_rec:0.09765
+
+ iter: 125/201, lr: 0.000100000 | PSNR:18.64 | loss: 0.09367 | loss_rec:0.09367
+
+ iter: 130/201, lr: 0.000100000 | PSNR:18.88 | loss: 0.09086 | loss_rec:0.09086
+
+ iter: 135/201, lr: 0.000100000 | PSNR:18.99 | loss: 0.09075 | loss_rec:0.09075
+
+ iter: 140/201, lr: 0.000100000 | PSNR:19.29 | loss: 0.08645 | loss_rec:0.08645
+
+ iter: 145/201, lr: 0.000100000 | PSNR:19.06 | loss: 0.08987 | loss_rec:0.08987
+
+ iter: 150/201, lr: 0.000100000 | PSNR:18.61 | loss: 0.09419 | loss_rec:0.09419
+
+ iter: 155/201, lr: 0.000100000 | PSNR:19.38 | loss: 0.08532 | loss_rec:0.08532
+
+ iter: 160/201, lr: 0.000100000 | PSNR:18.73 | loss: 0.09262 | loss_rec:0.09262
+
+ iter: 165/201, lr: 0.000100000 | PSNR:19.04 | loss: 0.09047 | loss_rec:0.09047
+
+ iter: 170/201, lr: 0.000100000 | PSNR:18.95 | loss: 0.09028 | loss_rec:0.09028
+
+ iter: 175/201, lr: 0.000100000 | PSNR:19.28 | loss: 0.08615 | loss_rec:0.08615
+
+ iter: 180/201, lr: 0.000100000 | PSNR:19.18 | loss: 0.08758 | loss_rec:0.08758
+
+ iter: 185/201, lr: 0.000100000 | PSNR:18.96 | loss: 0.09050 | loss_rec:0.0905
+
+ iter: 190/201, lr: 0.000100000 | PSNR:19.29 | loss: 0.08632 | loss_rec:0.08632
+
+ iter: 195/201, lr: 0.000100000 | PSNR:19.26 | loss: 0.08605 | loss_rec:0.08605
+
+ iter: 200/201, lr: 0.000100000 | PSNR:19.49 | loss: 0.08394 | loss_rec:0.08394

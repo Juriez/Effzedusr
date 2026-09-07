@@ -1,0 +1,7 @@
+# Backend build context only needs dependency manifests.
+# Everything else is bind-mounted at runtime (see docker-compose.yml).
+*
+
+!backend/package.json
+!backend/package-lock.json
+!requirements.txt

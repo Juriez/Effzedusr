@@ -116,13 +116,21 @@ app.post("/runPipeline", async (req, res) => {
     return res.status(400).json({ error: "ImageName is required" });
   }
 
-  const scriptPath = path.join(__dirname, "run_whole_project.ps1");
+  const scriptPath = path.join(__dirname, "run_whole_project.sh");
+  // const ps = spawn("powershell.exe", [
+  //   "-ExecutionPolicy", "Bypass",
+  //   "-File", scriptPath,
+  //   "-ImageName", ImageName
+  // ]);
 
-  const ps = spawn("powershell.exe", [
-    "-ExecutionPolicy", "Bypass",
-    "-File", scriptPath,
-    "-ImageName", ImageName
-  ]);
+
+  // dockerized
+  // Cross-platform: run the POSIX pipeline script via bash
+  // (works on Linux/macOS/Docker, and on Windows via Git Bash / WSL).
+  const ps = spawn("bash", [scriptPath, ImageName], {
+    cwd: path.join(__dirname, "..")
+  });
+
 
   let errorOutput = "";
 

@@ -33,12 +33,12 @@ parser.add_argument('--shave', type=int, default=20,
 parser.add_argument('--input_hr', type=str,
                     #default='../SynthesizedData/Data/TeleView_crop_SIFTAlign/artroom.jpeg',
                     # default='../RealworldData/Data/TeleView_SIFTAlign_cor/real.jpeg',
-                    default='../RealworldData/Data/TeleView_SIFTAlign_cor/Car.jpeg',
+                    default='../RealworldData/Data/TeleView_SIFTAlign_cor/lift.jpg',
                     help='TeleView image')
 
 parser.add_argument('--input_lr', type=str,
                     #default='../SynthesizedData/Data/WideView_iso2x_jpg75_crop/artroom.jpeg',
-                    default='../RealworldData/Data/WideView_crop/Car.jpeg',
+                    default='../RealworldData/Data/WideView_crop/lift.jpg',
                     help='WideView image')
 # training hyper params
 parser.add_argument('--lambda_list', type=str, default='1, 0.005, 0.001, 0.01')
@@ -66,7 +66,7 @@ parser.add_argument('--eval_interval', type=int, default=10, help='evaluation in
 #parser.add_argument('--output_path', type=str, default='../SynthesizedData/Data/DIAlign/', help='Root path to save ')
 parser.add_argument('--output_path', type=str, default='../RealworldData/Data/DIAlign/', help='Root path to save ')
 #parser.add_argument('--dataset', type=str, default='MB_isojpg2x/artroom', help='Save DirName')
-parser.add_argument('--dataset', type=str, default='iPhone11_wideSRTele/Car', help='Save DirName')
+parser.add_argument('--dataset', type=str, default='iPhone11_wideSRTele/lift', help='Save DirName')
 args = parser.parse_args()
 
 

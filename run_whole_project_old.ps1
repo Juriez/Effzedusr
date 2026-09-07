@@ -50,15 +50,19 @@ Write-Host ""
 
 # Step 4 ─ Deep/Iterative Alignment
 Write-Host "4. Iterative image alignment ..." -ForegroundColor Yellow
-& $python ".\Alignment\alignment.py" `
-    --input_hr ".\RealworldData\Data\TeleView_SIFTAlign_cor\$ImageName" `
-    --input_lr ".\RealworldData\Data\WideView_crop\$ImageName" `
-    --output_path ".\RealworldData\Data\DIAlign" `
-    --dataset "iPhone11_wideSRTele\$ImageBase" `
-    --shave 5 `
-    --scale 2 `
-    --epochs 21 `
-    --fre_epoch 10
+
+$args = @(
+    "--input_hr", ".\RealworldData\Data\TeleView_SIFTAlign_cor\$ImageName",
+    "--input_lr", ".\RealworldData\Data\WideView_crop\$ImageName",
+    "--output_path", ".\RealworldData\Data\DIAlign",
+    "--dataset", "iPhone11_wideSRTele\$ImageBase",
+    "--shave", "5",
+    "--scale", "2",
+    "--epochs", "51",
+    "--fre_epoch", "10"
+)
+
+& $python ".\Alignment\alignment.py" @args
 Write-Host "Alignment finished." -ForegroundColor Green
 Write-Host ""
 
@@ -67,7 +71,7 @@ Write-Host "5. Zero-shot super-resolution ..." -ForegroundColor Yellow
 & $python ".\SR\ZSSR_real.py" `
     --scale 2 `
     --shave 4 `
-    --train_lr ".\RealworldData\Data\DIAlign\iPhone11_wideSRTele\$ImageBase\out_20_warp.png" `
+    --train_lr ".\RealworldData\Data\DIAlign\iPhone11_wideSRTele\$ImageBase\out_50_warp.png" `
     --train_hr ".\RealworldData\Data\DIAlign\iPhone11_wideSRTele\$ImageBase\HR.png" `
     --test_lr ".\RealworldData\Data\WideView\$ImageName" `
     --test_hr ".\RealworldData\Data\TeleView\$ImageName" `

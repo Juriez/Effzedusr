@@ -14,7 +14,7 @@ export default function LowLightResultsPage() {
   const downloadImage = async () => {
     try {
       setDownloading(true);
-      const imageUrl = `http://localhost:3000/LowLight/Output/Input_images/${imageName.split(".")[0]}.png`;
+      const imageUrl = `http://localhost:3000/LowLight/results/Output/Input_images/${imageName.split(".")[0]}.png`;
       
       const response = await fetch(imageUrl);
       const blob = await response.blob();

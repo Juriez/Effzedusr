@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 import time
 from multiprocessing import Pool, cpu_count
+from pathlib import Path  # <-- Imported for robust relative paths
 
 
 def color_transfer_rgb(Ic, It, alpha=0.85):
@@ -44,16 +45,22 @@ def process_image(args):
 if __name__ == "__main__":
     start_time = time.time()
 
-    ref_folder = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView_crop_bic"
-    input_folder = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView_SIFTAlign"
-    save_folder = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView_SIFTAlign_cor/"
+    # 1. Dynamically find the directory where THIS script lives (RealworldData/color_correction)
+    current_script_dir = Path(__file__).resolve().parent
 
+    # 2. Safely jump up one level and find the 'Data' directory
+    data_dir = current_script_dir.parent / "Data"
+
+    # 3. Define absolute paths based on the dynamic calculation
+    ref_folder = str(data_dir / "WideView_crop_bic")
+    input_folder = str(data_dir / "TeleView_SIFTAlign")
+    save_folder = str(data_dir / "TeleView_SIFTAlign_cor")
+    
     os.makedirs(save_folder, exist_ok=True)
 
     valid_exts = ('.jpg', '.jpeg', '.png', '.bmp', '.tif', '.tiff')
     filepaths = [f for f in os.listdir(ref_folder) if f.lower().endswith(valid_exts)]
 
-   
     args_list = [(fname, ref_folder, input_folder, save_folder) for fname in filepaths]
     with Pool(processes=cpu_count()) as pool:
         pool.map(process_image, args_list)

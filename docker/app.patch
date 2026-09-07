@@ -1,0 +1,20 @@
+*** Begin Patch
+*** Update File: backend/app.js
+@@
+ app.post("/runPipeline", async (req, res) => {
+@@
+-const scriptPath = path.join(__dirname, "run_whole_project.ps1");
+-
+-const ps = spawn("powershell.exe", [
+-
+-"-ExecutionPolicy", "Bypass",
+-
+-"-File", scriptPath,
+-
+-"-ImageName", ImageName
+-
+-]);
++const scriptPath = path.join(__dirname, "run_whole_project.sh");
++
++const ps = spawn("/bin/sh", [scriptPath, ImageName]);
+*** End Patch

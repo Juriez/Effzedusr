@@ -1,0 +1,34 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    image: effzedusr-backend
+    container_name: effzedusr-backend
+    ports:
+      - "3000:3000"
+    volumes:
+      # Whole repo mounted so the Node API can reach the sibling
+      # Python pipeline dirs (SR/, Alignment/, RealworldData/, ...)
+      # and write outputs straight back to the host.
+      - ./:/app
+      # Keep the image's installed node_modules (host has none).
+      - /app/backend/node_modules
+    working_dir: /app/backend
+    command: node app.js
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend/frontend
+    image: effzedusr-frontend
+    container_name: effzedusr-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend/frontend:/app
+      - /app/node_modules
+    command: npm run dev -- --host 0.0.0.0 --port 5173
+    depends_on:
+      - backend
+    restart: unless-stopped

@@ -15,9 +15,9 @@
 
 # Run SIFT alignment script (PowerShell version)
 
-python .\sift_align.py `
+python ./sift_align.py `
     --mode "iphone11_wideSRTele" `
-    --wide_dir "..\Data\WideView" `
-    --tele_dir "..\Data\TeleView" `
-    --Tele_savePath "..\Data\TeleView_SIFTAlign" `
-    --WideCrop_savePath "..\Data\WideView_crop"
+    --wide_dir "../Data/WideView" `
+    --tele_dir "../Data/TeleView" `
+    --Tele_savePath "../Data/TeleView_SIFTAlign" `
+    --WideCrop_savePath "../Data/WideView_crop"

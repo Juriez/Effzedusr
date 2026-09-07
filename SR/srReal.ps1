@@ -1,6 +1,6 @@
 #python ZSSR_real.py --scale 2 --shave 4 --train_lr '../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Fair/out_20_warp.png' --train_hr '../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Fair/HR.png' --test_lr '../RealworldData/Data/WideView/Fair.jpeg' --test_hr '../RealworldData/Data/TeleView/Fair.jpeg' --Invari_map '../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Fair/PatchDisOut.npy' --output_path './Results_Real_Fair/' --dataset 'iPhone11_wideSRTele/Fair'
 
-#python ZSSR_real.py --scale 2 --shave 4 --train_lr 'D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\out_20_warp.png' --train_hr 'D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\HR.png' --test_lr 'D:\ZeDuSR\zedusr\RealworldData\Data\WideView\Car.jpeg' --test_hr 'D:\ZeDuSR\zedusr\RealworldData\Data\TeleView\Car.jpeg' --Invari_map 'D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\PatchDisOut.npy' --output_path '.\Results_Real_Cat\' --dataset 'iPhone11_wideSRTele\Car'
+#python ZSSR_real.py --scale 2 --shave 4 --train_lr 'D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\out_20_warp.png' --train_hr 'D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\HR.png' --test_lr 'D:\ZeDuSR\zedusr\RealworldData\Data\WideView\Instrument2.jpeg' --test_hr 'D:\ZeDuSR\zedusr\RealworldData\Data\TeleView\Instrument2.jpeg' --Invari_map 'D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\PatchDisOut.npy' --output_path '.\Results_Real_Cat\' --dataset 'iPhone11_wideSRTele\Instrument2'
 
 
 # Run ZSSR_real.py script (PowerShell version)
@@ -11,13 +11,13 @@ $python = "python"
 $script = "D:\ZeDuSR\zedusr\SR\ZSSR_real.py"
 
 # Input and output paths
-$train_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\out_20_warp.png"
-$train_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\HR.png"
-$test_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView\Car.jpeg"
-$test_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView\Car.jpeg"
-$invari_map = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\PatchDisOut.npy"
+$train_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\out_30_warp.png"
+$train_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\HR.png"
+$test_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView\Instrument2.jpeg"
+$test_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView\Instrument2.jpeg"
+$invari_map = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\PatchDisOut.npy"
 $output_path = ".\Results_Real_Car\"
-$dataset = "iPhone11_wideSRTele\Car"
+$dataset = "iPhone11_wideSRTele\Instrument2"
 
 # Run the script
 & $python $script `

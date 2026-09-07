@@ -1,9 +1,65 @@
-Namespace(train_lr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\out_20_warp.png', train_hr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\HR.png', Invari_map='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\PatchDisOut.npy', test_lr='..\\RealworldData\\Data\\WideView\\lift.jpg', test_hr='..\\RealworldData\\Data\\TeleView\\lift.jpg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\lift', output_path='D:\\ZeDuSR\\zedusr\\SR\\Results_Real_lift\\', eval_interval=5, epochs=11, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
+Namespace(train_lr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\out_30_warp.png', train_hr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\HR.png', Invari_map='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\lift\\PatchDisOut.npy', test_lr='..\\RealworldData\\Data\\WideView\\lift.jpg', test_hr='..\\RealworldData\\Data\\TeleView\\lift.jpg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\lift', output_path='..\\SR\\Results_Real_lift\\', eval_interval=100, epochs=301, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
 Starting Epoch: 0
-Total Epoches: 11
+Total Epoches: 301
 
- iter: 0/11, lr: 0.000200000 | PSNR:6.845 | loss: 0.52509 | loss_rec:0.5251
+ iter: 0/301, lr: 0.000200000 | PSNR:13.91 | SSIM:0.1633 | LPIPS:0.6046 | loss: 0.21782 | loss_rec:0.2178
 
- iter: 5/11, lr: 0.000100000 | PSNR:16.29 | loss: 0.14488 | loss_rec:0.1449
+ iter: 10/301, lr: 0.000100000 | PSNR:17.84 | SSIM:0.7477 | LPIPS:0.4585 | loss: 0.12188 | loss_rec:0.1219
 
- iter: 10/11, lr: 0.000100000 | PSNR:20.45 | loss: 0.08358 | loss_rec:0.08358
+ iter: 20/301, lr: 0.000100000 | PSNR:22.17 | SSIM:0.8454 | LPIPS:0.2876 | loss: 0.06939 | loss_rec:0.06939
+
+ iter: 30/301, lr: 0.000100000 | PSNR:24.91 | SSIM:0.8786 | LPIPS:0.2139 | loss: 0.05507 | loss_rec:0.05507
+
+ iter: 40/301, lr: 0.000100000 | PSNR:25.92 | SSIM:0.9036 | LPIPS:0.1840 | loss: 0.05200 | loss_rec:0.052
+
+ iter: 50/301, lr: 0.000100000 | PSNR:26.05 | SSIM:0.8901 | LPIPS:0.1604 | loss: 0.05015 | loss_rec:0.05015
+
+ iter: 60/301, lr: 0.000100000 | PSNR:26.35 | SSIM:0.9055 | LPIPS:0.1456 | loss: 0.04999 | loss_rec:0.04999
+
+ iter: 70/301, lr: 0.000100000 | PSNR:25.9 | SSIM:0.9056 | LPIPS:0.1311 | loss: 0.05263 | loss_rec:0.05263
+
+ iter: 80/301, lr: 0.000100000 | PSNR:25.97 | SSIM:0.8956 | LPIPS:0.1355 | loss: 0.05155 | loss_rec:0.05155
+
+ iter: 90/301, lr: 0.000100000 | PSNR:26.31 | SSIM:0.8952 | LPIPS:0.1340 | loss: 0.04930 | loss_rec:0.0493
+
+ iter: 100/301, lr: 0.000100000 | PSNR:27.23 | SSIM:0.9069 | LPIPS:0.1331 | loss: 0.04660 | loss_rec:0.0466
+
+ iter: 110/301, lr: 0.000100000 | PSNR:26.51 | SSIM:0.9032 | LPIPS:0.1267 | loss: 0.04924 | loss_rec:0.04924
+
+ iter: 120/301, lr: 0.000100000 | PSNR:25.91 | SSIM:0.9130 | LPIPS:0.1319 | loss: 0.05312 | loss_rec:0.05312
+
+ iter: 130/301, lr: 0.000100000 | PSNR:27.15 | SSIM:0.9107 | LPIPS:0.1252 | loss: 0.04618 | loss_rec:0.04618
+
+ iter: 140/301, lr: 0.000100000 | PSNR:27.93 | SSIM:0.9115 | LPIPS:0.1240 | loss: 0.04397 | loss_rec:0.04397
+
+ iter: 150/301, lr: 0.000100000 | PSNR:28.1 | SSIM:0.9179 | LPIPS:0.1233 | loss: 0.04453 | loss_rec:0.04453
+
+ iter: 160/301, lr: 0.000100000 | PSNR:27.05 | SSIM:0.9036 | LPIPS:0.1194 | loss: 0.04629 | loss_rec:0.04629
+
+ iter: 170/301, lr: 0.000100000 | PSNR:28.39 | SSIM:0.9174 | LPIPS:0.1193 | loss: 0.04399 | loss_rec:0.04399
+
+ iter: 180/301, lr: 0.000100000 | PSNR:27.85 | SSIM:0.9098 | LPIPS:0.1264 | loss: 0.04500 | loss_rec:0.045
+
+ iter: 190/301, lr: 0.000100000 | PSNR:29.21 | SSIM:0.9247 | LPIPS:0.1214 | loss: 0.04191 | loss_rec:0.04191
+
+ iter: 200/301, lr: 0.000100000 | PSNR:28.96 | SSIM:0.9197 | LPIPS:0.1227 | loss: 0.04202 | loss_rec:0.04202
+
+ iter: 210/301, lr: 0.000100000 | PSNR:29.38 | SSIM:0.9215 | LPIPS:0.1208 | loss: 0.04101 | loss_rec:0.04101
+
+ iter: 220/301, lr: 0.000100000 | PSNR:27.29 | SSIM:0.9159 | LPIPS:0.1213 | loss: 0.04801 | loss_rec:0.04801
+
+ iter: 230/301, lr: 0.000100000 | PSNR:28.9 | SSIM:0.9224 | LPIPS:0.1263 | loss: 0.04130 | loss_rec:0.0413
+
+ iter: 240/301, lr: 0.000100000 | PSNR:28.33 | SSIM:0.9094 | LPIPS:0.1238 | loss: 0.04348 | loss_rec:0.04348
+
+ iter: 250/301, lr: 0.000100000 | PSNR:28.08 | SSIM:0.9123 | LPIPS:0.1169 | loss: 0.04266 | loss_rec:0.04266
+
+ iter: 260/301, lr: 0.000100000 | PSNR:27.71 | SSIM:0.9103 | LPIPS:0.1181 | loss: 0.04309 | loss_rec:0.04309
+
+ iter: 270/301, lr: 0.000100000 | PSNR:28.82 | SSIM:0.9215 | LPIPS:0.1139 | loss: 0.04283 | loss_rec:0.04283
+
+ iter: 280/301, lr: 0.000100000 | PSNR:28.81 | SSIM:0.9197 | LPIPS:0.1141 | loss: 0.04230 | loss_rec:0.0423
+
+ iter: 290/301, lr: 0.000100000 | PSNR:28.53 | SSIM:0.9190 | LPIPS:0.1097 | loss: 0.04240 | loss_rec:0.0424
+
+ iter: 300/301, lr: 0.000100000 | PSNR:28.95 | SSIM:0.9175 | LPIPS:0.1122 | loss: 0.04161 | loss_rec:0.04161

@@ -20,21 +20,22 @@ from utils.util import *
 current_path = os.path.dirname(__file__)
 device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
+
 parser = argparse.ArgumentParser(description='ZSSR')
 # Data specifications
 parser.add_argument('--train_lr', type=str,
-                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/out_20_warp.png') #out_1000_warp.png
+                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Instrument2/out_30_warp.png') #out_1000_warp.png
 
 parser.add_argument('--train_hr', type=str,
-                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/HR.png')
+                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Instrument2/HR.png')
 
 parser.add_argument('--Invari_map', type=str,
-                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Car/PatchDisOut.npy')
+                    default='../RealworldData/Data/DIAlign/iPhone11_wideSRTele/Instrument2/PatchDisOut.npy')
 
 parser.add_argument('--test_lr', type=str,
-                    default='../RealworldData/Data/WideView/Car.jpeg')
+                    default='../RealworldData/Data/WideView/Instrument2.jpeg')
 parser.add_argument('--test_hr', type=str,
-                    default='../RealworldData/Data/TeleView/Car.jpeg')
+                    default='../RealworldData/Data/TeleView/Instrument2.jpeg')
 
 parser.add_argument('--workers', type=int, default=8, metavar='N', help='dataloader threads')
 parser.add_argument('--vgg_weight', type=float, default=0.05, help='weight of perception loss')
@@ -49,7 +50,7 @@ parser.add_argument('--eval_interval', type=int, default=100, help='evaluation i
 
 # training hyper params
 
-parser.add_argument('--epochs', type=int, default=201, metavar='N', #201
+parser.add_argument('--epochs', type=int, default=301, metavar='N', #201
                     help='number of epochs to train')
 parser.add_argument('--start_epoch', type=int, default=0,
                     metavar='N', help='start epochs (default:0)')
@@ -140,14 +141,35 @@ class Trainer(object):
 
         pred = torch.clamp(pred, 0.0, 1.0)
         psnr_iter_pred = cal_psnr(pred, hr_image)
+        
+        
+        # ----- SSIM (call the existing function) -----
+        # Convert batch of tensors → list of numpy images [0,255] HWC
+        pred_np = pred.detach().cpu().numpy()          # (B, C, H, W) in [0,1]
+        hr_np   = hr_image.detach().cpu().numpy()
+
+        ssim_list = []
+        for b in range(pred_np.shape[0]):
+            p = np.transpose(pred_np[b] * 255.0, (1, 2, 0))  # → (H, W, C) [0,255]
+            h = np.transpose(hr_np[b]   * 255.0, (1, 2, 0))
+            ssim_list.append(cal_ssim_np(p, h))              # ← direct call
+
+        ssim_iter = float(np.mean(ssim_list))
+        
+        #LPIPS
+        
+        lpips_iter = cal_lpips(pred, hr_image)
+        
         train_loss = loss.item()
 
-        if epoch % 5 == 0:    #10
-            self.saver.print_log('\n iter: {}/{}, lr: {:.9f} | PSNR:{:.4} | loss: {:.5f} | loss_rec:{:.4}'
-                                .format(epoch, args.epochs, self.optimizer.param_groups[0]["lr"], psnr_iter_pred,
+        if epoch % 10 == 0:    #10
+            self.saver.print_log('\n iter: {}/{}, lr: {:.9f} | PSNR:{:.4} | SSIM:{:.4f} | LPIPS:{:.4f} | loss: {:.5f} | loss_rec:{:.4}'
+                                .format(epoch, args.epochs, self.optimizer.param_groups[0]["lr"], psnr_iter_pred, ssim_iter, lpips_iter,
                                         train_loss, loss.item()))
             self.writer.add_scalar('train/train_loss', train_loss, epoch)
             self.writer.add_scalar('train/PSNR', psnr_iter_pred, epoch)
+            self.writer.add_scalar('train/SSIM', ssim_iter, epoch)  ##ssim added
+            self.writer.add_scalar('train/LPIPS', lpips_iter, epoch) ##lpips added
             self.writer.add_scalar('loss/loss_rec', loss.item(), epoch)
 
     def testing(self, epoch, input_lr, input_hr):

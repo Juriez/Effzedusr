@@ -1,45 +1,65 @@
-Namespace(train_lr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\box\\out_20_warp.png', train_hr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\box\\HR.png', Invari_map='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\box\\PatchDisOut.npy', test_lr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\WideView\\box.jpg', test_hr='D:\\ZeDuSR\\zedusr\\RealworldData\\Data\\TeleView\\box.jpg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\box', output_path='.\\Results_Real_box\\', eval_interval=100, epochs=201, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
+Namespace(train_lr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\box\\out_30_warp.png', train_hr='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\box\\HR.png', Invari_map='..\\RealworldData\\Data\\DIAlign\\iPhone11_wideSRTele\\box\\PatchDisOut.npy', test_lr='..\\RealworldData\\Data\\WideView\\box.jpg', test_hr='..\\RealworldData\\Data\\TeleView\\box.jpg', workers=8, vgg_weight=0.05, vgg_path='../preTrained/vgg16-397923af.pth', dataset='iPhone11_wideSRTele\\box', output_path='..\\SR\\Results_Real_box\\', eval_interval=100, epochs=301, start_epoch=0, batch_size=16, patch_size=128, scale=2, shave=4, lr=0.0002, lr_scheduler='step', milestones=[5, 500, 1000, 1500], gamma=0.5, momentum=0.9, weight_decay=0.0005, resume=None, in_ch=3, n_feats=64, n_reduction=16, n_resgroups=5, n_resblocks=3)
 Starting Epoch: 0
-Total Epoches: 201
+Total Epoches: 301
 
- iter: 0/201, lr: 0.000200000 | PSNR:8.231 | loss: 0.89917 | loss_rec:0.8992
+ iter: 0/301, lr: 0.000200000 | PSNR:9.011 | SSIM:0.2295 | loss: 0.44128 | loss_rec:0.4413
 
- iter: 10/201, lr: 0.000100000 | PSNR:10.17 | loss: 0.29572 | loss_rec:0.2957
+ iter: 10/301, lr: 0.000100000 | PSNR:21.09 | SSIM:0.6325 | loss: 0.07847 | loss_rec:0.07847
 
- iter: 20/201, lr: 0.000100000 | PSNR:18.89 | loss: 0.09970 | loss_rec:0.0997
+ iter: 20/301, lr: 0.000100000 | PSNR:23.34 | SSIM:0.8302 | loss: 0.06223 | loss_rec:0.06223
 
- iter: 30/201, lr: 0.000100000 | PSNR:21.5 | loss: 0.07261 | loss_rec:0.07261
+ iter: 30/301, lr: 0.000100000 | PSNR:24.12 | SSIM:0.8381 | loss: 0.05812 | loss_rec:0.05812
 
- iter: 40/201, lr: 0.000100000 | PSNR:22.44 | loss: 0.06431 | loss_rec:0.06431
+ iter: 40/301, lr: 0.000100000 | PSNR:23.78 | SSIM:0.8534 | loss: 0.06121 | loss_rec:0.06121
 
- iter: 50/201, lr: 0.000100000 | PSNR:23.35 | loss: 0.05961 | loss_rec:0.05961
+ iter: 50/301, lr: 0.000100000 | PSNR:24.94 | SSIM:0.8653 | loss: 0.05432 | loss_rec:0.05432
 
- iter: 60/201, lr: 0.000100000 | PSNR:23.81 | loss: 0.05660 | loss_rec:0.0566
+ iter: 60/301, lr: 0.000100000 | PSNR:25.12 | SSIM:0.8651 | loss: 0.05343 | loss_rec:0.05343
 
- iter: 70/201, lr: 0.000100000 | PSNR:23.8 | loss: 0.05655 | loss_rec:0.05655
+ iter: 70/301, lr: 0.000100000 | PSNR:26.35 | SSIM:0.8871 | loss: 0.04934 | loss_rec:0.04934
 
- iter: 80/201, lr: 0.000100000 | PSNR:23.96 | loss: 0.05626 | loss_rec:0.05626
+ iter: 80/301, lr: 0.000100000 | PSNR:26.43 | SSIM:0.8856 | loss: 0.04870 | loss_rec:0.0487
 
- iter: 90/201, lr: 0.000100000 | PSNR:23.64 | loss: 0.05811 | loss_rec:0.05811
+ iter: 90/301, lr: 0.000100000 | PSNR:25.31 | SSIM:0.8773 | loss: 0.05307 | loss_rec:0.05307
 
- iter: 100/201, lr: 0.000100000 | PSNR:24.26 | loss: 0.05509 | loss_rec:0.05509
+ iter: 100/301, lr: 0.000100000 | PSNR:25.92 | SSIM:0.8802 | loss: 0.05036 | loss_rec:0.05036
 
- iter: 110/201, lr: 0.000100000 | PSNR:24.85 | loss: 0.05241 | loss_rec:0.05241
+ iter: 110/301, lr: 0.000100000 | PSNR:26.22 | SSIM:0.8462 | loss: 0.04926 | loss_rec:0.04926
 
- iter: 120/201, lr: 0.000100000 | PSNR:24.48 | loss: 0.05367 | loss_rec:0.05367
+ iter: 120/301, lr: 0.000100000 | PSNR:26.15 | SSIM:0.8855 | loss: 0.04940 | loss_rec:0.0494
 
- iter: 130/201, lr: 0.000100000 | PSNR:24.3 | loss: 0.05484 | loss_rec:0.05484
+ iter: 130/301, lr: 0.000100000 | PSNR:26.79 | SSIM:0.8905 | loss: 0.04730 | loss_rec:0.0473
 
- iter: 140/201, lr: 0.000100000 | PSNR:25.15 | loss: 0.05184 | loss_rec:0.05184
+ iter: 140/301, lr: 0.000100000 | PSNR:25.65 | SSIM:0.8869 | loss: 0.05211 | loss_rec:0.05211
 
- iter: 150/201, lr: 0.000100000 | PSNR:24.43 | loss: 0.05380 | loss_rec:0.0538
+ iter: 150/301, lr: 0.000100000 | PSNR:25.77 | SSIM:0.8847 | loss: 0.05113 | loss_rec:0.05113
 
- iter: 160/201, lr: 0.000100000 | PSNR:24.75 | loss: 0.05260 | loss_rec:0.0526
+ iter: 160/301, lr: 0.000100000 | PSNR:26.12 | SSIM:0.8921 | loss: 0.05032 | loss_rec:0.05032
 
- iter: 170/201, lr: 0.000100000 | PSNR:24.05 | loss: 0.05605 | loss_rec:0.05605
+ iter: 170/301, lr: 0.000100000 | PSNR:26.5 | SSIM:0.8720 | loss: 0.04845 | loss_rec:0.04845
 
- iter: 180/201, lr: 0.000100000 | PSNR:25.13 | loss: 0.05088 | loss_rec:0.05088
+ iter: 180/301, lr: 0.000100000 | PSNR:26.59 | SSIM:0.8923 | loss: 0.04871 | loss_rec:0.04871
 
- iter: 190/201, lr: 0.000100000 | PSNR:25.29 | loss: 0.05037 | loss_rec:0.05037
+ iter: 190/301, lr: 0.000100000 | PSNR:27.01 | SSIM:0.8995 | loss: 0.04719 | loss_rec:0.04719
 
- iter: 200/201, lr: 0.000100000 | PSNR:24.36 | loss: 0.05380 | loss_rec:0.0538
+ iter: 200/301, lr: 0.000100000 | PSNR:26.37 | SSIM:0.8901 | loss: 0.04919 | loss_rec:0.04919
+
+ iter: 210/301, lr: 0.000100000 | PSNR:26.25 | SSIM:0.8825 | loss: 0.04984 | loss_rec:0.04984
+
+ iter: 220/301, lr: 0.000100000 | PSNR:26.71 | SSIM:0.8757 | loss: 0.04775 | loss_rec:0.04775
+
+ iter: 230/301, lr: 0.000100000 | PSNR:26.95 | SSIM:0.8951 | loss: 0.04730 | loss_rec:0.0473
+
+ iter: 240/301, lr: 0.000100000 | PSNR:26.49 | SSIM:0.8806 | loss: 0.04886 | loss_rec:0.04886
+
+ iter: 250/301, lr: 0.000100000 | PSNR:26.76 | SSIM:0.8838 | loss: 0.04781 | loss_rec:0.04781
+
+ iter: 260/301, lr: 0.000100000 | PSNR:27.17 | SSIM:0.8769 | loss: 0.04703 | loss_rec:0.04703
+
+ iter: 270/301, lr: 0.000100000 | PSNR:26.92 | SSIM:0.9000 | loss: 0.04777 | loss_rec:0.04777
+
+ iter: 280/301, lr: 0.000100000 | PSNR:27.0 | SSIM:0.8981 | loss: 0.04713 | loss_rec:0.04713
+
+ iter: 290/301, lr: 0.000100000 | PSNR:26.36 | SSIM:0.8700 | loss: 0.04890 | loss_rec:0.0489
+
+ iter: 300/301, lr: 0.000100000 | PSNR:27.09 | SSIM:0.8842 | loss: 0.04667 | loss_rec:0.04667
