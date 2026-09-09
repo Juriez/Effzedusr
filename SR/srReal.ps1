@@ -11,19 +11,13 @@ $python = "python"
 $script = "D:\ZeDuSR\zedusr\SR\ZSSR_real.py"
 
 # Input and output paths
-<<<<<<< HEAD
+
 $train_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\out_30_warp.png"
 $train_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\HR.png"
 $test_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView\Instrument2.jpeg"
 $test_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView\Instrument2.jpeg"
 $invari_map = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Instrument2\PatchDisOut.npy"
-=======
-$train_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\out_30_warp.png"
-$train_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\HR.png"
-$test_lr = "D:\ZeDuSR\zedusr\RealworldData\Data\WideView\Car.jpeg"
-$test_hr = "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView\Car.jpeg"
-$invari_map = "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign\iPhone11_wideSRTele\Car\PatchDisOut.npy"
->>>>>>> recovered-files
+
 $output_path = ".\Results_Real_Car\"
 $dataset = "iPhone11_wideSRTele\Instrument2"
 
