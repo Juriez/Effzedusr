@@ -11,14 +11,8 @@ python "alignment.py" `
     --dataset "iPhone11_wideSRTele\lift" `
     --shave 5 `
     --scale 2 `
-<<<<<<< HEAD
     --epochs 51 `
---fre_epoch 10
-
-# python alignment.py --input_hr "D:\ZeDuSR\zedusr\RealworldData\Data\TeleView_SIFTAlign_cor\lift.jpg" --input_lr "D:\ZeDuSR\zedusr\RealworldData\Data\WideView_crop\lift.jpg" --output_path "D:\ZeDuSR\zedusr\RealworldData\Data\DIAlign" --dataset "iPhone11_wideSRTele\lift" --shave 5 --scale 2 --epochs 51 --fre_epoch 10
-=======
-    --epochs 31 `       
     --fre_epoch 10
->>>>>>> recovered-files
+
 
 
