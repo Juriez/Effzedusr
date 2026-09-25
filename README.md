@@ -458,7 +458,7 @@ We thank the authors of [ZeDuSR](https://github.com/XrKang/ZeDuSR) & [Low_Light_
 ## 📖 Citation
 
 To cite our paper:
-
+```
 @article{faisal2026effzedusr,
   author    = {Mahir Faisal and Mridha Md. Nafis Fuad and B.M. Mainul Hossain},
   title     = {EffZeDuSR: A web tool for zero-shot dual-lens super-resolution and low light image enhancement},
@@ -469,3 +469,4 @@ To cite our paper:
   doi       = {10.1016/j.softx.2026.103064},
   url       = {https://doi.org/10.1016/j.softx.2026.103064}
 }
+```
