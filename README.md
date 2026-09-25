@@ -1,7 +1,6 @@
-# Paper
+# [Paper](https://doi.org/10.1016/j.softx.2026.103064)
 EffZeDuSR: A web tool for zero-shot dual-lens super-resolution and low light image enhancement.
-SoftwareX, 2026, Article 103064.
-[DOI:](https://doi.org/10.1016/j.softx.2026.103064)
+SoftwareX, 2026, Article 103064
 
 # 🚀 EffZeDuSR Real-World Image Super-Resolution Pipeline
 
