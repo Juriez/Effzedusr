@@ -456,3 +456,17 @@ This project is not just a script it's a **full-stack AI-powered image enhanceme
 ## Acknowledgement
 We thank the authors of [ZeDuSR](https://github.com/XrKang/ZeDuSR) & [Low_Light_Pattern_Recognition](http://github.com/TripleJ2543/Low_Light_Pattern_Recognition_2023) for sharing their codes & thank the authors of [DCSR](https://github.com/Tengfei-Wang/DCSR) for sharing the CameraFusion Dataset.
 
+## 📖 Citation
+
+To cite our paper:
+
+@article{faisal2026effzedusr,
+  author    = {Mahir Faisal and Mridha Md. Nafis Fuad and B.M. Mainul Hossain},
+  title     = {EffZeDuSR: A web tool for zero-shot dual-lens super-resolution and low light image enhancement},
+  journal   = {SoftwareX},
+  year      = {2026},
+  article   = {103064},
+  publisher = {Elsevier},
+  doi       = {10.1016/j.softx.2026.103064},
+  url       = {https://doi.org/10.1016/j.softx.2026.103064}
+}
